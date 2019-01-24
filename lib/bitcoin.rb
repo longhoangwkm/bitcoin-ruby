@@ -12,7 +12,7 @@ module Bitcoin
   # deprecated in favor of a unification of Fixnum and BigInteger named Integer.
   # Since this project strivers for backwards-compatability, we determine the
   # appropriate class to use at initialization.
-  # 
+  #
   # This avoids annoying deprecation warnings on newer versions for ourselves
   # and library consumers.
   Integer =
@@ -978,4 +978,20 @@ module Bitcoin
       privkey_version: "ef",
     })
 
+  NETWORKS[:xpchain] = {
+      project: :xpchain,
+      magic_head: "\xFC\x87\xBA\xC0",
+      message_magic: "Xpchain Signed Message:\n",
+      address_version: "4c",
+      p2sh_version: "1c",
+      privkey_version: "80",
+      extended_privkey_version: "0488ade4",
+      extended_pubkey_version: "0488b21e",
+      bech32_hrp: "xpc",
+      default_port: 8762,
+      dns_seeds: [],
+      genesis_hash: "0000000000f04d3bdebf907f79b4b096a05d763ac890612202ff9c9cc685221617",
+      known_nodes: [],
+      checkpoints: {}
+    }
 end
